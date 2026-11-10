@@ -1,0 +1,15 @@
+services:
+  - type: worker
+    name: discord-server-migration-bot
+    runtime: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: DISCORD_TOKEN
+        sync: false
+      - key: DESTINATION_INVITE_URL
+        sync: false
+      - key: ANNOUNCEMENT_CHANNEL_ID
+        sync: false
+      - key: ADMIN_ROLE_ID
+        sync: false
